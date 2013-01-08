@@ -1,6 +1,6 @@
 minesweeper
 ===========
-[Play!](https://googledrive.com/host/0ByXRs7PqKV3IWC1BSF9OX0ZRdzg/)
+[Play!](http://loudnate.github.com/minesweeper/)
 
 A client-side minesweeper clone. This was partly for fun, and partly as a
 learning experience with:
@@ -8,5 +8,6 @@ learning experience with:
 * Handlebars, which I'm pleased with.
 * Bootstrap, which is excessive and not for production use.
 * 3D Transform stacking contexts
-* Google Drive publishing
+* [Google Drive publishing](https://googledrive.com/host/0ByXRs7PqKV3IWC1BSF9OX0ZRdzg/), which was confusing.
+* [Github Pages publishing](http://loudnate.github.com/minesweeper/), which was better.
 * Markdown
