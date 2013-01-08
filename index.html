@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>minesweeper2</title>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="minesweeper.css"></link>
+</head>
+<body>
+	<div class="container root">
+		<form class="config form-inline">
+			<fieldset class="game-config">
+				<h1>Minesweeper</h1>
+				<div class="btn-group">
+					<button type="button" class="btn btn-small flag" data-toggle="button" title="Enable flagging mode">
+						<i class="icon-flag"></i>
+					</button>
+					<button type="button" class="btn btn-small cheat" data-toggle="button" title="Reveal mine locations">
+						<i class="icon-eye-open"></i>
+					</button>
+					<button type="button" class="btn btn-small end" title="End game">
+						<i class="icon-fast-forward"></i>
+					</button>
+				</div>
+			</fieldset>
+			<fieldset class="setup-config">
+				<h1 class="win-msg">You win!</h1>
+			  	<h1 class="fail-msg">You lose.</h1>
+				<div class="btn-group newgame">
+					<button type="button" class="btn btn-small" data-size="8" data-mines="10" title="8x8, 10 mines">Easy</button>
+					<button type="button" class="btn btn-small" data-size="16" data-mines="40" title="16x16, 40 mines">Medium</button>
+					<button type="button" class="btn btn-small" data-size="32" data-mines="99" title="32x32, 99 mines">Hard</button>
+					<!-- <button type="button" class="btn btn-small" title="Choose the size and mines">Custom</button> -->
+				</div>
+			</fieldset>
+		</form>
+
+		<div class="board">
+		</div>
+	</div>
+
+
+	<script id="template-row" type="text/x-handlebars-template">
+		<div class="board-row">
+			{{{cols}}}
+		</div>
+	</script>
+	<script id="template-col" type="text/x-handlebars-template">
+		<div class="board-col" data-row="{{row}}" data-col="{{col}}">
+			<div class="mine tile"></div>
+			<div class="cover tile"></div>
+		</div>
+	</script>
+	<script src="//closure-library.googlecode.com/svn/trunk/closure/goog/base.js" type="text/javascript"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.rc.1/handlebars.min.js" type="text/javascript"></script>
+	<script src="model.js" type="text/javascript"></script>
+	<script src="controller.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		(function() {
+			var game = new minesweeper.GameController();
+		})();
+	</script>
+</body>
+</html>
