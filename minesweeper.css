@@ -1,0 +1,179 @@
+.root {
+	text-align: center;
+}
+
+.config {
+	margin-bottom: 10px;
+}
+
+.setup-config,
+.win-msg,
+.fail-msg {
+    display: none;
+}
+
+.win .game-config,
+.fail .game-config {
+	display: none;
+}
+
+.win .setup-config,
+.fail .setup-config,
+.win .win-msg,
+.fail .fail-msg {
+	display: block;
+}
+
+.board {
+	margin: auto;
+	display: inline-block;
+	cursor: default;
+	font-weight: 200;
+	-webkit-user-select: none;
+}
+
+.board-row:after {
+	display: table;
+	content: "";
+	clear: both;
+}
+
+.board-col {
+	width: 44px;
+	height: 44px;
+	float: left;
+	-webkit-perspective: 250px;
+}
+
+.small .board-col {
+	width: 18px;
+	height: 18px;
+}
+
+.medium .board-col {
+	width: 22px;
+	height: 22px;
+}
+
+.board-col .tile {
+	position: absolute;
+	box-sizing: border-box;
+	height: inherit;
+	width: inherit;
+	-webkit-transition: -webkit-transform 500ms ease-out;
+	-webkit-backface-visibility: hidden;
+}
+
+.board-col .mine {
+	font-size: 2em;
+	line-height: 44px;
+	-webkit-transform: translateZ(-20px) rotateY(180deg);
+}
+
+.small .board-col .mine {
+	font-size: 1.0em;
+	line-height: 18px;
+}
+
+.medium .board-col .mine {
+	font-size: 1.2em;
+	line-height: 22px;
+}
+
+.board-col .cover {
+	background-color: #CCC;
+	-webkit-transform: translateZ(-20px) rotate(0);
+}
+
+.board-col:hover .tile {
+	-webkit-transition-duration: 150ms;
+}
+
+.board-col:hover .cover {
+	background-color: #AAA;
+	-webkit-transform: translateZ(-10px) rotateY(25deg);
+}
+
+.board-col:hover .mine {
+	-webkit-transform: translateZ(-10px) rotateY(205deg);
+}
+
+.board-col.flag .cover {
+	-webkit-transform: translateZ(0px) rotateY(0);
+}
+
+.board-col.reveal .cover {
+	-webkit-transform: translateZ(0px) rotateY(180deg);
+}
+
+.fail .mine,
+.win .cover {
+	-webkit-transition-duration: 0s;
+}
+.win .mine {
+	-webkit-transition-property: background-color, box-shadow;
+}
+/* The timing of the exploding animation. */
+.fail .cover {
+	-webkit-transition-duration: 1s;
+	-webkit-transition-timing-function: ease-out;
+}
+/* For the exploding animation, we have to create a single 3d stacking context. */
+.fail .board,
+.fail .board-col {
+	-webkit-transform-style: preserve-3d;
+}
+
+.win .tileM .mine {
+	background-color: brown;
+	box-shadow: inset 0 0 25px 3px black;
+}
+
+.mine-hint .cover {
+	box-shadow: inset 0 0 25px 3px brown;
+}
+
+.board-col.reveal .mine, .fail .board-col .mine {
+	-webkit-transform: translateZ(0px) rotateY(360deg);
+}
+
+.flag .cover {
+	background: -webkit-repeating-linear-gradient(top left, #EEE, #EEE 5px, #F33 5px, #F33 12px);
+	box-shadow: inset 0px 0px 0px 2px #F33;
+}
+
+.medium .flag .cover,
+.small .flag .cover {
+	background: -webkit-repeating-linear-gradient(top left, #EEE, #EEE 2px, #F33 3px, #F33 6px);
+}
+
+.tile0 .mine {
+    background-color: #ffffdd;
+}
+.tile1 .mine {
+    background-color: #FFF499;
+}
+.tile2 .mine {
+    background-color: #FFEA99;
+}
+.tile3 .mine {
+    background-color: #FFE099;
+}
+.tile4 .mine {
+    background-color: #FFD699;
+}
+.tile5 .mine {
+    background-color: #FFCC99;
+}
+.tile6 .mine {
+    background-color: #FFC199;
+}
+.tile7 .mine {
+    background-color: #FFB799;
+}
+.tile8 .mine {
+    background-color: #FFAD99;
+}
+.tileM .mine {
+    background-color: #F33;
+}
