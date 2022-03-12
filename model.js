@@ -58,7 +58,7 @@ minesweeper.Game = class {
      * @param {number} col The column of the tile to choose.
      * @return {Error} An error if any of the tiles revealed resulted in a mine.
      */
-    rvealUnknownAdjacent(row, col) {
+    revealUnknownAdjacent(row, col) {
         // Exit if the tile hasn't been revealed.
         var tile = this.userBoard.getTile(row, col);
         if (tile < 0) {
